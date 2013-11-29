@@ -1,0 +1,231 @@
+#formularioPrincipal *{
+	padding: 0;
+	margin: 0;
+/*	border:1px solid red;*/
+}
+
+#formularioPrincipal{
+	width:1000px;
+	height:700px;
+	margin:50px auto 0 auto;
+	border: 1px solid black;
+	border-radius: 7px;
+	background-color:#F0F0F0;
+ 
+}
+
+/*#seccionDeEntradaOculto {
+	position: relative;
+	width: 980px;
+	height: 100px;
+	/*border: 1px solid red;
+	top: 0px;
+	left: 0px;
+
+}*/
+
+/************** seccion de ENTRADA *********************/
+#seccionDeEntrada{
+	width: 980px;
+	height: 80px;
+	margin: 10px;
+	background-color:#FFF;
+	border-radius: 7px;
+	border-bottom: 1px solid #999999;
+	font-family:Arial;
+}
+
+#contBtnIntroDatos {
+	width: 40%;
+}
+
+#contTxtIntroDatos {
+	width: 59%;
+/*	margin: 0 auto;*/
+}
+
+#formularioPrincipal #seccionDeEntrada #contTxtIntroDatos span {
+	width: 265px;
+	margin: 20px 0 0 300px;
+}
+
+#formularioPrincipal #seccionDeEntrada #contBtnIntroDatos span {
+	width: 100px;
+	margin-top: 17px;
+	margin-left: 30px;
+}
+
+/************** seccion de TABLA *********************/
+#seccionDeTabla{
+	width: 380px;
+	height: 590px;
+	margin: 0 10px 10px 10px;
+	background-color:#FFF;
+	border-radius: 7px;
+    border-right: 1px solid #999999;
+}
+
+#formularioPrincipal #seccionDeTabla #contTabla {
+	margin: 10px;
+}
+
+
+#contTabla{
+	overflow: auto;
+	width: 360px;
+	height: 540px;
+	}
+	
+#tablaDeDatos{
+	 margin: 0 auto;
+	}
+	
+#formularioPrincipal #seccionDeTabla #contTabla table {
+	/*border: 1px solid green;*/
+	border-collapse: collapse;
+	font-family: Garamond;
+}
+#formularioPrincipal #seccionDeTabla #contTabla table td {
+ /*border: 1px solid red;*/
+ text-align: center;
+}
+
+#formularioPrincipal #seccionDeTabla #contTabla table tr td:first-child, #formularioPrincipal #seccionDeTabla #contTabla table tr th:first-child {
+ border-right: 1px solid black;
+ width: 42px;
+}
+
+#formularioPrincipal #seccionDeTabla #contTabla table tr td:last-child, #formularioPrincipal #seccionDeTabla #contTabla table tr th:last-child  {
+ border-left: 1px solid black;
+ width: 42px;
+}
+
+
+#formularioPrincipal #seccionDeTabla #contTabla table th {
+	 border-bottom: 1px solid black;
+	 width: 20px;
+}
+
+#formularioPrincipal #seccionDeTabla .enlace{
+	text-align: center;
+	width: 190px;
+	margin: 10px auto;
+	display: block;
+	height: 20px;
+}
+
+#formularioPrincipal #seccionDeTabla .enlace a{
+ padding: 0 26px 0 0;
+ background: #FFF url(../imagenes/flecha_inactiva.png) no-repeat right center;
+ color:#999999;
+ font-family:Arial;
+ text-decoration:none;
+}
+
+#formularioPrincipal #seccionDeTabla .enlace a:link, #formularioPrincipal #seccionDeTabla .enlace a:visited {
+ color:#696969;
+}
+#formularioPrincipal #seccionDeTabla .enlace a:hover, #formularioPrincipal #seccionDeTabla .enlace a:active {
+ color:#3333FF;
+ background: #FFF url(../imagenes/flecha_activa.png) no-repeat right center;
+}
+
+/************** seccion de RESULTADOS *********************/
+#seccionResultados{
+	width: 586px;
+	height: 590px;
+	margin: 0 10px 10px 0;
+	background-color:#FFF;
+	border-radius: 7px;
+    border-left: 1px solid #999999;
+
+/*    border-right: 2px solid #999999;*/
+}
+
+#resultadosFuncion{
+	height:100px;
+ /*border: 1px solid red;*/
+}
+
+#formularioPrincipal #seccionResultados  #resultadosGrafico{
+	height:480px;
+/*	border: 1px solid green;*/
+ 	position:relative;
+}
+
+#formularioPrincipal #seccionResultados  #resultadosGrafico #simboloVariables{
+ position:absolute;
+ left:20px;
+ top:32px;
+ font-family:Arial;
+ font-size:15px;
+}
+
+#formularioPrincipal #seccionResultados #micanvas{
+	width:566px;
+	height:430px;
+	border-radius: 4px;
+	border:1px solid #999;
+	overflow: scroll;
+	margin: 0 10px 10px 10px;
+	}
+
+#formularioPrincipal #seccionResultados #resultadosFuncion span {
+	text-align: center;
+	margin: 0 10px 10px 10px;
+	display: block;
+	height: 45px;
+	overflow: auto;
+	padding-top: 5px;
+}
+
+
+#resultadosFuncionOculto{
+	border-radius: 10px;
+	border-bottom:2px solid #999;
+	margin: 0 10px;
+ /*border: 1px solid red;*/
+}
+
+.seccionesFlotantes, .campoFlotante{
+ float:left;
+}
+
+.campoFlotante{
+	height:80px;
+	float:left;
+}
+
+#formularioPrincipal .campoFlotante span{
+	display: block;
+}
+
+
+#formularioPrincipal #seccionDeEntrada #contTxtIntroDatos span #txtCantidadVariables {
+	text-align: right;
+	padding: 3px;
+}
+#formularioPrincipal #seccionDeEntrada #contBtnIntroDatos span #btnIntroDatos {
+	padding: 3px;
+}
+
+#formularioPrincipal #seccionResultados .titulo{
+	text-align: center;
+	width: 190px;
+	margin: 10px auto;
+	display: block;
+	height: 20px;
+}
+#formularioPrincipal #seccionResultados .titulo{
+	font-weight: bold;
+	letter-spacing: 1px;
+	font-family:Arial;
+	font-size:15px;
+}
+
+#formularioPrincipal #seccionResultados #funcionSimplificada{
+	font-family: Garamond;
+	letter-spacing: 1px;
+	font-size:18px;
+}
+

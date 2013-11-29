@@ -1,0 +1,97 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet" href="estilos/estilos.css" />
+<title>Simplicador y graficador de funciones booleanas</title>
+<script type="text/javascript" src="jquery/jquery-1.8.0.min.js"></script>
+
+<!--librerias para la simplifacion con el metodo de Quine-->
+<script type="text/javascript" src="librerias/quine/vector.js"></script>
+<script type="text/javascript" src="librerias/quine/objetos.js"></script>
+<script type="text/javascript" src="librerias/quine/Matriz.js"></script>
+<script type="text/javascript" src="librerias/quine/utilitarios.js"></script>
+
+<!--librerias para graficar la funcion simplificada-->
+<script type="text/javascript" src="librerias/grafica/ClasesCircuito.js"></script>
+<script type="text/javascript" src="librerias/grafica/componentes.js"></script>
+
+<!--librerias para el proyecto-->
+<script type="text/javascript" src="librerias/proyecto.js"></script>
+<script type="text/javascript" src="librerias/interfazUsuario.js"></script>
+
+
+
+<script type="text/javascript">$(document).ready( function(){
+	
+proyecto= new Proyecto();
+var canvas= document.getElementById("micanvas");ctx=canvas.getContext("2d");ctx.scale(7.5,7.5);ctx.lineWidth= 0.1;
+
+document.getElementById("btnIntroDatos").onclick= ingresarDatos;
+document.getElementById("btnSimplificarYGraficar").onclick= simplificarYGraficar;
+
+//se seleccion el texto de input text cada vez que se hace click sobre el
+document.getElementById("txtCantidadVariables").onclick= function(){ this.select();}
+
+});</script>
+
+
+<script type="text/javascript">
+function ingresarDatos(){
+	 var cantidadVariables= parseInt( document.getElementById("txtCantidadVariables").value );
+     var contTabla= document.getElementById("contTabla");
+     if( contTabla.childNodes.length== 0 )
+      contTabla.appendChild( generarTablaHtmlDeCombinaciones( cantidadVariables ) );
+	 else
+	  contTabla.replaceChild( generarTablaHtmlDeCombinaciones( cantidadVariables ), contTabla.childNodes[0] );
+	 proyecto.setNumeroVariables( cantidadVariables );
+}
+
+function simplificarYGraficar(){
+    var valoresFuncion= obtenerValoresFuncion( document.getElementById("tablaDeDatos") );	
+    proyecto.generarFuncionYGrafico( valoresFuncion, "funcionSimplificada", ctx );
+	}
+</script>
+</head>
+
+<body>
+
+<form  name="formularioPrincipal" id="formularioPrincipal" action="" method="get">
+
+
+    <div id="seccionDeEntrada">
+    
+     <div id="contTxtIntroDatos" class="campoFlotante"><span><label>Cantidad de variables: </label><input id="txtCantidadVariables" name="cantidadVariables" type="text" maxlength="2" size="10" value="0"/></span></div>
+     <div id="contBtnIntroDatos" class="campoFlotante"><span><input id="btnIntroDatos" type="button" value="Ingresar datos" /></span></div>
+    </div>
+    
+<!--<div id="seccionDeEntradaOculto">
+</div>
+-->
+<div id="seccionDeTabla" class="seccionesFlotantes">
+<span class="enlace">
+ <a id="btnSimplificarYGraficar" href="#">Simplificar y Graficar</a>
+</span>
+ <div id="contTabla"></div>
+</div>
+
+<div id="seccionResultados" class="seccionesFlotantes">
+	<div id="resultadosFuncion"> 
+       	<label class="titulo">Funcion simplificada</label>
+    	<span><label id="funcionSimplificada"></label></span>
+    </div>
+    <div id="resultadosFuncionOculto"> </div>
+	<div id="resultadosGrafico">
+        <label class="titulo">Grafica de la funcion</label>
+         <canvas id="micanvas">  
+         
+       	</canvas>
+        <label id="simboloVariables"></label>
+    </div>
+</div>
+
+</form>
+
+
+</body>
+</html>
